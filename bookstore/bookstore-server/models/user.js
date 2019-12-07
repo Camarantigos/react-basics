@@ -44,7 +44,7 @@ userSchema.method.comparePassword = async function (candidatePassword, next) {
     } catch (err) {
         return next(err);
     }
-}
+};
 
 const User = mongoose.model("User", userSchema);
 
