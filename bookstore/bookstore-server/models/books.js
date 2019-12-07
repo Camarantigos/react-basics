@@ -4,10 +4,12 @@ const bookSchema = new mongoose.Scheema({
     title: {
         type: String,
         required: true,
+        maxlength: 120,
         match: /^[ A-Za-z0-9@”#&*!]*$/
     },
     description: {
         type: String,
+        maxlength: 512,
         required: true
     },
     category: [{
@@ -21,6 +23,7 @@ const bookSchema = new mongoose.Scheema({
     }],
     publisher: {
         type: String,
+        maxlength: 60,
         required: true
     },
     year: {
@@ -41,7 +44,11 @@ const bookSchema = new mongoose.Scheema({
         type: String,
         required: true,
         maxlength: 13
-    }
+    },
+    messages: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Message"
+    }]
 });
 
 const Book = mongoose.model("Books", bookSchema);
