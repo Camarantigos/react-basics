@@ -2,16 +2,16 @@ const mongoose = require("mongoose");
 
 const bookSchema = new mongoose.Scheema({
     title: {
-        type: string,
+        type: String,
         required: true,
         match: /^[ A-Za-z0-9@”#&*!]*$/
     },
     description: {
-        type: string,
+        type: String,
         required: true
     },
     category: [{
-        type: string,
+        type: String,
         required: true
     }],
     authorNames: [{
@@ -20,28 +20,30 @@ const bookSchema = new mongoose.Scheema({
         // console.log(typeof req.body.authorNames)
     }],
     publisher: {
-        type: string,
+        type: String,
         required: true
     },
     year: {
-        type: string,
+        type: String,
         required: true
     },
     numberOfPages: {
-        type: number,
+        type: Number,
         required: true,
         max: 9999
     },
     isbn10: {
-        type: string,
+        type: String,
         required: true,
         maxlength: 10
     },
     isbn13: {
-        type: string,
+        type: String,
         required: true,
         maxlength: 13
     }
 });
 
-const User = mongoose.model("User", userSchema);
+const Book = mongoose.model("Books", bookSchema);
+
+module.exports = Book;
