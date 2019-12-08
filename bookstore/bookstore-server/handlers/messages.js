@@ -1,4 +1,4 @@
-const bd = require("../models");
+const db = require("../models");
 
 // path for message = /api/users/:id/messages
 exports.createMessage = async function (req, res, next) {
@@ -14,8 +14,9 @@ exports.createMessage = async function (req, res, next) {
             username: true,
             profileImageUrl: true
         });
+        return res.status(200).json(foundMessage);
     } catch (err) {
-
+        return next(err);
     }
 };
 
