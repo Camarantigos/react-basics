@@ -46,6 +46,9 @@ ul.nav.navbar-nav li {
     text-shadow: 0 0 8px #66757f;
 }
 
+button {
+    margin-top: 2.5rem;
+}
 /* Code */
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
