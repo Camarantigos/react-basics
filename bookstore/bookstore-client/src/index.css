@@ -49,6 +49,18 @@ ul.nav.navbar-nav li {
 button {
     margin-top: 2.5rem;
 }
+
+/* List of messages */
+#messages .list-group-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 7px 20px 15px;
+}
+
+#messages:not(.no-hover) .list-group-item:hover {
+    background-color: #ced3d6;
+}
+
 /* Code */
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
