@@ -5,7 +5,7 @@ import MessageTimeline from "./MessageTimeline";
 const Homepage = ({ currentUser }) => {
     if (!currentUser.isAuthenticated) {
         return (
-            <div className="home-hero text-light">
+            <div className="home-hero">
                 <h1>Welcome to Bookstore</h1>
                 <h4>Please Sign Up if you are new here</h4>
                 <Link to="/signup" className="btn btn-primary">
@@ -15,7 +15,7 @@ const Homepage = ({ currentUser }) => {
         );
     }
     return (
-        <div className="text-light">
+        <div className="">
             <MessageTimeline
                 profileImageUrl={currentUser.user.profileImageUrl}
                 username={currentUser.user.username}

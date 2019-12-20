@@ -9,7 +9,7 @@ export const loadMessages = messages => ({
 
 export const fetchMessages = () => {
     return dispatch => {
-        return apiCall("GET", "/api/messages")
+        return apiCall("get", "/api/messages")
             .then(res => {
                 dispatch(loadMessages(res));
             })

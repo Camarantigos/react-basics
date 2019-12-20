@@ -12,24 +12,14 @@ const MessageItem = ({ date, profileImageUrl, text, username }) => (
             height="100"
             width="100"
         />
-        <div className="message-area text-white">
+        <div>{text}</div>
+        <div className="message-area">
             <Link to="/">@{username} &nbsp;</Link>
             <span className="text-muted">
                 <Moment className="text-muted" format="DD MM YYYY">
                     {date}
                 </Moment>
             </span>
-            <p className="text-white">{text}</p>
-            <p class="text-primary">.text-primary</p>
-            <p class="text-secondary">.text-secondary</p>
-            <p class="text-success">.text-success</p>
-            <p class="text-danger">.text-danger</p>
-            <p class="text-warning">.text-warning</p>
-            <p class="text-info">.text-info</p>
-            <p class="text-light bg-dark">.text-light</p>
-            <p class="text-dark">.text-dark</p>
-            <p class="text-muted">.text-muted</p>
-            <p class="text-white bg-dark">.text-white</p>
         </div>
     </li>
 );

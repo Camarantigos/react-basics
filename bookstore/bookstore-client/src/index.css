@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    /* background-color: black; */
 }
 
 /* Navbar */
@@ -13,7 +13,7 @@ nav a {
 }
 
 nav li a:hover {
-    color: white;
+    /* color: white; */
     text-decoration: none;
     cursor: pointer;
 }

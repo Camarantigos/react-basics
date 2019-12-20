@@ -46,7 +46,7 @@ export default class AuthForm extends Component {
         });
         return (
             <div>
-                <div className="row justify-content-md-center text-center text-light">
+                <div className="row justify-content-md-center text-center ">
                     <div className="col-md-6">
                         <form onSubmit={this.handleSubmit}>
                             <h2>{heading}</h2>
