@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import MessageTimeline from "./MessageTimeline";
+import BookTimeline from "./BookTimeline";
 
 const Homepage = ({ currentUser }) => {
     if (!currentUser.isAuthenticated) {
@@ -16,7 +17,9 @@ const Homepage = ({ currentUser }) => {
     }
     return (
         <div>
-            <div> {/* <BookList /> */}</div>
+            <div>
+                <BookTimeline />
+            </div>
             <div className="">
                 <MessageTimeline
                     profileImageUrl={currentUser.user.profileImageUrl}

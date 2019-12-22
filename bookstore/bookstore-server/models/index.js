@@ -7,4 +7,4 @@ mongoose.connect("mongodb://localhost/bookstore", {
 
 module.exports.User = require("./user");
 module.exports.Message = require("./message");
-// module.exports.Book = require("./book");
+module.exports.Book = require("./book");

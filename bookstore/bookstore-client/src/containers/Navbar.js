@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../store/actions/auth";
-import Logo from "../images/logo.png";
+
 
 class Navbar extends Component {
     logout = e => {
@@ -14,13 +14,10 @@ class Navbar extends Component {
             <nav className="navbar navbar-expand-md">
                 <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item ">
-                            <Link className="nav-link" to="/">
-                                Check Books
-                            </Link>
-                        </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/">
+                            <Link
+                                className="nav-link"
+                                to={`/users/${this.props.currentUser.user.id}/books/new`}>
                                 Create Book
                             </Link>
                         </li>
@@ -28,9 +25,9 @@ class Navbar extends Component {
                 </div>
                 <div className="mx-auto order-0">
                     <Link to="/" className="navbar-brand mx-auto">
-                        <img src={Logo} alt="Bookstore Home" />
+
                         BookStore
-                        <img src={Logo} alt="Bookstore Home" />
+
                     </Link>
                     <button
                         className="navbar-toggler"

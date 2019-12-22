@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const errorHandler = require("./handlers/error");
 const authRoutes = require("./routes/auth");
 const messagesRoutes = require("./routes/messages");
+const booksRoutes = require("./routes/books");
 const { loginRequired, ensureCorrectUser } = require("./middleware/auth");
 
 const PORT = 3500;
@@ -37,6 +38,32 @@ app.get("/api/messages", loginRequired, async function(req, res, next) {
         return next(err);
     }
 });
+
+app.get("/api/books", loginRequired, async function(req, res, next) {
+    try {
+        let books = await db.Book.find()
+            .sort({
+                title: "desc",
+            })
+            .populate("book", {
+                username: true,
+                title: true,
+                description: true,
+                category: true,
+                authorNames: true,
+                publisher: true,
+                year: true,
+                numberOfPages: true,
+                isbn10: true,
+                isbn13: true,
+            });
+        return res.status(200).json(books);
+    } catch (err) {
+        return next(err);
+    }
+});
+
+app.use("/api/users/:id/books", loginRequired, ensureCorrectUser, booksRoutes);
 
 // All routes and errors here for now
 app.use(function(req, res, next) {
