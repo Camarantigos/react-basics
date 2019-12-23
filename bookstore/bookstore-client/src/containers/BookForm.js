@@ -17,145 +17,233 @@ class BookForm extends Component {
             isbn10: "",
         };
     }
-    // bookSubmitHandler = event => {
-    //     event.preventDefault();
-    // let title = this.state.title;
-    // if (title.length > 120) {
-    //     alert("Title can't be more than 120 characters long");
-    // }
-    // };
-    handleNewBook = event => {
-        event.preventDefault();
-        let name = event.target.name;
-        let value = event.target.value;
+
+    handleNewBook = e => {
+        e.preventDefault();
         this.props.postNewBook(this.state.book);
-        this.setState({ [name]: value });
+        this.setState({
+            title: "",
+            description: "",
+            category: "",
+            authorNames: "",
+            publisher: "",
+            numberOfPages: "",
+            year: "",
+            isbn10: "",
+            isbn13: "",
+        });
         this.props.history.push("/");
     };
     render() {
         return (
-            <form onSubmit={this.handleNewBook}>
-                {this.props.errors.book && (
-                    <div className="alert alert-danger">
-                        {this.props.errors.book}
-                    </div>
-                )}
-                <div>
-                    <label htmlFor="title">Title: </label>
-                    <input
-                        id="title"
-                        name="title"
-                        type="text"
-                        className="form-control"
-                        value={this.state.value}
-                        onChange={e => this.handleNewBook}
-                    />
-                    <label htmlFor="description">Description</label>
-                    <input
-                        id="description"
-                        type="text"
-                        className="form-control"
-                        name="description"
-                        value={this.state.value}
-                        onChange={e => this.handleNewBook}
-                    />
-                    <label htmlFor="category">Categories</label>
-                    <input
-                        id="category"
-                        type="text"
-                        multiple
-                        className="form-control"
-                        name="category"
-                        value={this.state.value}
-                        onChange={e => this.handleNewBook}
-                    />
-                    <label htmlFor="authorName">Author Name</label>
-                    <input
-                        id="authorName"
-                        type="text"
-                        className="form-control"
-                        name="authorName"
-                        value={this.state.value}
-                        onChange={e => this.handleNewBook}
-                    />
-                    <label htmlFor="publisher">Publisher</label>
-                    <input
-                        id="publisher"
-                        type="text"
-                        className="form-control"
-                        name="publisher"
-                        value={this.state.value}
-                        onChange={e => this.handleNewBook}
-                    />
-                    <label htmlFor="year">Year</label>
-                    <input
-                        id="year"
-                        type="date"
-                        className="form-control"
-                        name="year"
-                        value={this.state.value}
-                        onChange={e => this.handleNewBook}
-                    />
-                    <label htmlFor="numberOfPages">Page Numbers</label>
-                    <input
-                        id="numberOfPages"
-                        type="number"
-                        className="form-control"
-                        name="numberOfPages"
-                        value={this.state.value}
-                        onChange={e => this.handleNewBook}
-                    />
+            <div>
+                <h3 className="form-header">Add new Book</h3>
+                <form id="book-form" onSubmit={this.handleNewBook}>
+                    {this.props.errors.message && (
+                        <div className="alert alert-danger">
+                            {this.props.errors.message}
+                        </div>
+                    )}
+                    <div>
+                        <div className="row">
+                            <div className="column">
+                                <p>
+                                    <label htmlFor="title">Title: </label>
+                                    <input
+                                        name="title"
+                                        type="text"
+                                        className=""
+                                        value={this.state.title}
+                                        onChange={e =>
+                                            this.setState({
+                                                title: e.target.value,
+                                            })
+                                        }
+                                    />
+                                </p>
+                                <p>
+                                    <label htmlFor="description">
+                                        Description
+                                    </label>
+                                    <input
+                                        id="description"
+                                        type="text"
+                                        className=""
+                                        name="description"
+                                        value={this.state.description}
+                                        onChange={e =>
+                                            this.setState({
+                                                description: e.target.value,
+                                            })
+                                        }
+                                    />
+                                </p>
+                                <p>
+                                    <label htmlFor="category">Categories</label>
+                                    <input
+                                        id="category"
+                                        type="text"
+                                        multiple
+                                        className=""
+                                        name="category"
+                                        value={this.state.category}
+                                        onChange={e =>
+                                            this.setState({
+                                                category: e.target.value,
+                                            })
+                                        }
+                                    />
+                                </p>
+                                <p>
+                                    <label htmlFor="authorName">
+                                        Author Name
+                                    </label>
+                                    <input
+                                        id="authorName"
+                                        type="text"
+                                        className=""
+                                        name="authorName"
+                                        value={this.state.authorName}
+                                        onChange={e =>
+                                            this.setState({
+                                                authorName: e.target.value,
+                                            })
+                                        }
+                                    />
+                                </p>
+                                <p>
+                                    <label htmlFor="publisher">Publisher</label>
+                                    <input
+                                        id="publisher"
+                                        type="text"
+                                        className=""
+                                        name="publisher"
+                                        value={this.state.publisher}
+                                        onChange={e =>
+                                            this.setState({
+                                                publisher: e.target.value,
+                                            })
+                                        }
+                                    />
+                                </p>
+                                <p>
+                                    <label htmlFor="year">Year</label>
+                                    <input
+                                        id="year"
+                                        type="date"
+                                        className=""
+                                        name="year"
+                                        value={this.state.year}
+                                        onChange={e =>
+                                            this.setState({
+                                                year: e.target.value,
+                                            })
+                                        }
+                                    />
+                                </p>
+                                <p>
+                                    <label htmlFor="numberOfPages">
+                                        Page Numbers
+                                    </label>
+                                    <input
+                                        id="numberOfPages"
+                                        type="number"
+                                        className=""
+                                        name="numberOfPages"
+                                        value={this.state.numberOfPages}
+                                        onChange={e =>
+                                            this.setState({
+                                                numberOfPages: e.target.value,
+                                            })
+                                        }
+                                    />
+                                </p>
+                            </div>
 
-                    <label htmlFor="rating">Rating</label>
-                    <input
-                        id="rating"
-                        type="number"
-                        max="5"
-                        min="1"
-                        className="form-control"
-                        name="rating"
-                        value={this.state.value}
-                        onChange={e => this.handleNewBook}
-                    />
-                    <label htmlFor="isbn10">ISBN-10</label>
-                    <input
-                        id="isbn10"
-                        type="text"
-                        className="form-control"
-                        name="isbn10"
-                        value={this.state.value}
-                        onChange={e => this.handleNewBook}
-                    />
-                    <label htmlFor="isbn13">ISBN-13</label>
-                    <input
-                        id="isbn13"
-                        type="text"
-                        className="form-control"
-                        name="isbn13"
-                        value={this.state.value}
-                        onChange={e => this.handleNewBook}
-                    />
-                    <label htmlFor="image">Image</label>
-                    <input
-                        id="image"
-                        type="text"
-                        className="form-control"
-                        // value={this.state.image}
-                        name="image"
-                        onChange={e => this.handleNewBook}
-                    />
-                    <button
-                        type="submit"
-                        className="bnt bnt-success pull-right">
-                        Save
+                            <div className="column">
+                                <p>
+                                    <label htmlFor="image"></label>
+                                    <input
+                                        id="image"
+                                        type="text"
+                                        className=""
+                                        // value={this.state.image}
+                                        name="image"
+                                        placeholder="import image .jpg .png .gif"
+                                        // onChange={e => this.handleNewBook}
+                                    />
+                                </p>
+                                <p>
+                                    <label htmlFor="options">Options</label>
+                                    <input
+                                        id="options"
+                                        type="text"
+                                        className=""
+                                        // value={this.state.options}
+                                        name="options"
+                                        // onChange={e => this.handleNewBook}
+                                    />
+                                </p>
+                                <p>
+                                    <label htmlFor="rating">Rating</label>
+                                    <input
+                                        id="rating"
+                                        type="number"
+                                        max="5"
+                                        min="1"
+                                        className=""
+                                        name="rating"
+                                        // value={this.state.rating}
+                                        // onChange={e => this.setState({ rating: e.target.value })}
+                                    />
+                                </p>
+                                <p>
+                                    <label htmlFor="isbn10">ISBN-10</label>
+                                    <input
+                                        id="isbn10"
+                                        type="text"
+                                        className=""
+                                        name="isbn10"
+                                        value={this.state.isbn10}
+                                        onChange={e =>
+                                            this.setState({
+                                                isbn10: e.target.value,
+                                            })
+                                        }
+                                    />
+                                </p>
+                                <p>
+                                    <label htmlFor="isbn13">ISBN-13</label>
+                                    <input
+                                        id="isbn13"
+                                        type="text"
+                                        className=""
+                                        name="isbn13"
+                                        value={this.state.isbn13}
+                                        onChange={e =>
+                                            this.setState({
+                                                isbn13: e.target.value,
+                                            })
+                                        }
+                                    />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <button form="book-form" type="submit" className="save-button">
+                    Save
+                </button>
+                <div className="add-another-controller">
+                    <button type="submit" className="add-another-book">
+                        <i class="fa fa-plus"></i>
                     </button>
-                    {/* <button
-                        type="submit"
-                        className="bnt bnt-success pull-right">
-                        add another book
-                    </button> */}
+                    <p className="add-another-book-text">Add another book</p>
+                    <p className="add-another-book-text text-muted">
+                        Out Of Order
+                    </p>
                 </div>
-            </form>
+            </div>
         );
     }
 }

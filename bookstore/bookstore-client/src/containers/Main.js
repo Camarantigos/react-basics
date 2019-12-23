@@ -8,6 +8,7 @@ import { removeError } from "../store/actions/errors";
 import withAuth from "../hocs/withAuth";
 import MessageForm from "../containers/MessageForm";
 import BookForm from "../containers/BookForm";
+import BookItem from "../containers/BookItem";
 
 const Main = props => {
     const { authUser, errors, removeError, currentUser } = props;
@@ -58,6 +59,7 @@ const Main = props => {
                     path="/users/:id/messages/new"
                     component={withAuth(MessageForm)}
                 />
+                <Route path={`/api/book/1`} component={BookItem} />
                 <Route
                     path="/users/:id/books/new"
                     component={withAuth(BookForm)}

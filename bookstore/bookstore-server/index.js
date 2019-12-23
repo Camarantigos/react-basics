@@ -46,7 +46,6 @@ app.get("/api/books", loginRequired, async function(req, res, next) {
                 title: "desc",
             })
             .populate("book", {
-                username: true,
                 title: true,
                 description: true,
                 category: true,

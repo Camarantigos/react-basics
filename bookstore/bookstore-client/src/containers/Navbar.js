@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../store/actions/auth";
 
-
 class Navbar extends Component {
     logout = e => {
         e.preventDefault();
@@ -25,9 +24,7 @@ class Navbar extends Component {
                 </div>
                 <div className="mx-auto order-0">
                     <Link to="/" className="navbar-brand mx-auto">
-
-                        BookStore
-
+                        Bookstore
                     </Link>
                     <button
                         className="navbar-toggler"

@@ -9,6 +9,7 @@ const MessageTimeline = props => {
                 profileImageUrl={props.profileImageUrl}
                 username={props.username}
             />
+            <h2>Comments</h2>
             <MessageList />
         </div>
     );

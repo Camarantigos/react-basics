@@ -1,9 +1,9 @@
 import React from "react";
 import BookList from "../containers/BookList";
 
-const BookTimeline = props => {
+const BookTimeline = () => {
     return (
-        <div className="row">
+        <div className="lists-app">
             <BookList />
         </div>
     );

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import DefaultBookImg from "../images/logo.png";
 
 const BookItem = ({
+    _id,
     date,
     title,
     description,
@@ -17,33 +18,34 @@ const BookItem = ({
     removeBook,
     isCorrectUser,
 }) => (
-    <li className="list-group-item">
+    <li className="flex-list-group-item">
         <img
             className="book-image"
             src={DefaultBookImg}
             alt={title}
-            height="100"
-            width="100"
+            height="150"
+            width="150"
         />
 
         <div className="book-area">
-            <Link to="/">@{title} &nbsp;</Link>
+            {/* TODO Dynamic */}
+            <Link to={`/api/book/1`}>@{title}&nbsp;</Link>
             <span className="text-muted">
                 <Moment className="text-muted" format="DD MMM YYYY">
                     {date}
                 </Moment>
             </span>
-            <div>a{description}</div>
-            <div>s{category}</div>
-            <div>d{authorNames}</div>
+            {/* <div>
+                <p>{description}</p>
+            </div>
+            <div>{category}</div>
+            <div>{authorNames}</div>
             <div>{publisher}</div>
             <div>{year}</div>
             <div>{numberOfPages}</div>
             <div>{isbn10}</div>
-            <div>{isbn13}</div>
-            <div>
-                <p>{description}</p>
-            </div>
+            <div>{isbn13}</div> */}
+
             {isCorrectUser && (
                 <a onClick={removeBook} className="btn btn-danger">
                     Remove Book

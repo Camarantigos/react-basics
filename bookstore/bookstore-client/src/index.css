@@ -1,26 +1,32 @@
-body {
-    /* background-color: black; */
-}
-
 /* Navbar */
 
 nav {
     margin-bottom: 1rem;
+    border: solid 1px;
+    background-color: rgb(233, 233, 233);
 }
 
 nav a {
     font-weight: bold;
 }
 
-nav li a:hover {
-    /* color: white; */
+nav li a {
+    color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-.navbar-brand > img {
+nav li a:hover {
+    color: teal;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar-brand {
     display: inline-block;
-    width: 60px;
+    width: 360px;
+    font-size: 3rem;
+    color: black;
     margin-bottom: 2px;
     margin-right: 5px;
     border-radius: 2px;
@@ -50,6 +56,11 @@ button {
     margin-top: 2.5rem;
 }
 
+.all-center {
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+}
 /* List of messages */
 #messages .list-group-item {
     display: flex;
@@ -60,7 +71,161 @@ button {
 #messages:not(.no-hover) .list-group-item:hover {
     background-color: #ced3d6;
 }
+/* Flex */
+.lists-app {
+    text-align: center;
+}
 
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    flex: 1;
+}
+
+.form-header {
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Forms */
+
+form {
+    padding: 1.9rem;
+    padding-top: 3rem;
+    border: solid 1px;
+}
+label {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    margin-right: 0.5rem;
+}
+input {
+    overflow: visible;
+    /* border: none; */
+    width: 65%;
+    margin-bottom: 1rem;
+}
+input[name="image"] {
+    background: grey;
+    border: white;
+    width: 25%;
+    height: 150%;
+    margin-left: 105px;
+    margin-bottom: 22px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+input[name="options"] {
+    width: 25%;
+    margin-top: 120px;
+}
+input[name="rating"] {
+    width: 25%;
+}
+input[name="isbn10"] {
+    width: 25%;
+}
+input[name="isbn13"] {
+    width: 25%;
+}
+.save-button {
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 3px 70px 3px 70px;
+    box-shadow: 1px 1px #888888;
+}
+.add-another-controller {
+    float: right;
+}
+.add-another-book {
+    background-color: transparent;
+    border: solid 2px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: 40px;
+    font-size: 2rem;
+    font-variant-position: unset;
+    position: relative;
+}
+
+.add-another-book-text {
+    font-style: italic;
+}
+/* Books flexbox */
+.flexcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 1000px;
+}
+.flex-list-group-item {
+    width: 200px;
+    height: 200px;
+    margin: 8px;
+    list-style: none;
+}
+
+/* book details view*/
+.book-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 1000px;
+}
+.book-details-area {
+    align-content: flex-end;
+    width: 500px;
+    height: 900px;
+    margin: 8px;
+}
+.book-details-area h2 {
+    font-weight: bold;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+.fav-button {
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 0px 10px 0px 10px;
+    margin-left: 10px;
+    box-shadow: 1px 1px #888888;
+}
+.buy-button {
+    border: solid 1px;
+    border-radius: 5px;
+    margin-left: 150px;
+    padding: 3px 90px 3px 90px;
+    box-shadow: 1px 1px #888888;
+}
+.star-rating {
+    line-height: 50px;
+    font-size: 3.25em;
+    font: weight 100;
+}
+
+.fa-user {
+    font-size: 55px;
+    margin-right: 50px;
+}
 /* Code */
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

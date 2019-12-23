@@ -12,18 +12,18 @@ const MessageItem = ({
     isCorrectUser,
 }) => (
     <li className="list-group-item">
-        <img
+        {/* <img
             className="message-image"
             src={profileImageUrl || DefaultProfileImg}
             alt={username}
             height="100"
             width="100"
-        />
-
+        /> */}
+        <i class="fa fa-user"></i>
         <div className="message-area">
             <Link to="/">@{username} &nbsp;</Link>
             <span className="text-muted">
-                <Moment className="text-muted" format="DD MM YYYY">
+                <Moment className="text-muted" format="DD MMM YYYY">
                     {date}
                 </Moment>
             </span>

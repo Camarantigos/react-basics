@@ -17,7 +17,8 @@ const Homepage = ({ currentUser }) => {
     }
     return (
         <div>
-            <div>
+            {/* TODO Breadcrumbs */}
+            <div className="flexcontainer">
                 <BookTimeline />
             </div>
             <div className="">

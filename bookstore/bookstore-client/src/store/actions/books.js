@@ -27,8 +27,8 @@ export const postNewBook = (
     publisher,
     year,
     numberOfPages,
-    isbn13,
-    isbn10
+    isbn10,
+    isbn13
 ) => (dispatch, getState) => {
     let { currentUser } = getState();
     const id = currentUser.user.id;
