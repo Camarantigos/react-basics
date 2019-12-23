@@ -1,68 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# How to use
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+1. Install both back and front npm packages via
 
-### `npm start`
+```
+npm install
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. Create a '.env' file and enter
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```
+SECRET_KEY=asd98f6abnsdjkfhba0s9d7fasopidbufsa89d67bf
+```
 
-### `npm test`
+### BACKEND SERVER RUNS ON PORT \*3500\* see \*index.js\* in bookstore-server directory.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Run backend server from bookstore-server directory with
 
-### `npm run build`
+```
+npm run server
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Run Frontend server from bookstore-client
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+After that you can SignUp and SignIn to the App.
 
-### `npm run eject`
+## Wasn't able to post a book corectly from frontend :(
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+In order to post book you can use the api endpoints by any api software (postman), or in cosole by
+httpie
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Example:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. SIGN_UP
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+http POST localhost:3500/api/auth/signup username=book password=book email=book@book.book
+```
 
-## Learn More
+2. SIGN_IN
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+http POST localhost:3500/api/auth/signin password=book email=book@book.book
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. POST_BOOK
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```
+http POST localhost:3500/api/users/USER_ID/books "Authorization:Bearer TOKEN_AFTER_LOGIN" title="Programming JavaScript Applications" description="Take advantage of JavaScript's power to build robust web-scale or enterprise applications that are easy to extend and maintain. By applying the design patterns outlined in this practical book, experienced JavaScript developers will learn how to write flexible and resilient code that's easier-yes, easier-to work with as your code base grows." category="Programming" authorNames="Eric Elliott" publisher="O'Reilly Media" year="2014-07-01T00:00:00.000Z" numberOfPages="254" isbn13="9781491950296" isbn10="""
+```
